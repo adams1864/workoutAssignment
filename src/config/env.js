@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
 
 // Load environment variables
-dotenv.config();
+dotenv.config({ override: true });
 
 const requiredEnvVars = [
   'DATABASE_URL',

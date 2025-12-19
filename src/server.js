@@ -23,3 +23,15 @@ process.on('unhandledRejection', (err) => {
   logger.error('Unhandled Promise Rejection:', err);
   server.close(() => process.exit(1));
 });
+
+// Graceful shutdown
+const gracefulShutdown = (signal) => {
+  logger.info(`${signal} signal received: closing HTTP server`);
+  server.close(() => {
+    logger.info('HTTP server closed');
+    process.exit(0);
+  });
+};
+
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));
