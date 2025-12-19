@@ -28,5 +28,8 @@ Thumbs.db
 dist/
 build/
 
-# Prisma
-prisma/migrations/
+# Docker
+.dockerignore
+
+# Do NOT ignore prisma/migrations
+# We want to commit the SQL files so others can sync the DB
