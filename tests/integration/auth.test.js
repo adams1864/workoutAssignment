@@ -11,10 +11,6 @@ describe('Auth Integration Tests', () => {
     await prisma.user.deleteMany();
   });
 
-  afterAll(async () => {
-    await prisma.$disconnect();
-  });
-
   describe('POST /api/auth/register', () => {
     it('should register a new client successfully', async () => {
       const response = await request(app)

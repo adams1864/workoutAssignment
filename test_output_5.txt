@@ -1,0 +1,558 @@
+
+> workout-assignment-api@1.0.0 test
+> jest --coverage
+
+PASS tests/integration/auth.test.js
+  ● Console
+
+    console.log
+      DATABASE_URL in database.js: postgresql://workout_user:workout_pass@localhost:5432/workout_db_test?schema=public
+
+      at Object.log (src/config/database.js:3:9)
+
+    console.log
+      2025-12-19 18:08:19 [[32minfo[39m]: New user registered: newclient@example.com (CLIENT)
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:19 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: New user registered: newtrainer@example.com (TRAINER)
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[31merror[39m]: Please provide a valid email address {"stack":"Error: Please provide a valid email address\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\middleware\\validate.js:21:19\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:807:7\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:691:5","statusCode":400,"path":"/api/auth/register","method":"POST"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[31merror[39m]: Password must be at least 6 characters long {"stack":"Error: Password must be at least 6 characters long\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\middleware\\validate.js:21:19\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:807:7\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:691:5","statusCode":400,"path":"/api/auth/register","method":"POST"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: New user registered: duplicate@example.com (CLIENT)
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[31merror[39m]: User with this email already exists {"stack":"Error: User with this email already exists\n    at AuthService.register (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\services\\authService.js:19:13)\n    at register (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\controllers\\authController.js:13:20)","statusCode":409,"path":"/api/auth/register","method":"POST"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: User logged in: testuser@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      Login failed: User not found for email wrong@example.com
+
+      at AuthService.log [as login] (src/services/authService.js:59:15)
+
+    console.log
+      2025-12-19 18:08:20 [[31merror[39m]: Invalid email or password {"stack":"Error: Invalid email or password\n    at AuthService.login (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\services\\authService.js:60:13)\n    at login (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\controllers\\authController.js:35:22)","statusCode":401,"path":"/api/auth/login","method":"POST"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      Login failed: Password mismatch for email testuser@example.com
+
+      at AuthService.log [as login] (src/services/authService.js:67:15)
+
+    console.log
+      2025-12-19 18:08:20 [[31merror[39m]: Invalid email or password {"stack":"Error: Invalid email or password\n    at AuthService.login (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\services\\authService.js:68:13)\n    at login (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\controllers\\authController.js:35:22)","statusCode":401,"path":"/api/auth/login","method":"POST"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[31merror[39m]: Password is required {"stack":"Error: Password is required\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\middleware\\validate.js:21:19\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:807:7\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:691:5","statusCode":400,"path":"/api/auth/login","method":"POST"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+FAIL tests/integration/workout.test.js (5.048 s)
+  ● Console
+
+    console.log
+      DATABASE_URL in database.js: postgresql://workout_user:workout_pass@localhost:5432/workout_db_test?schema=public
+
+      at Object.log (src/config/database.js:3:9)
+
+    console.log
+      Login failed: User not found for email trainer@example.com
+
+      at AuthService.log [as login] (src/services/authService.js:59:15)
+
+    console.log
+      2025-12-19 18:08:20 [[31merror[39m]: Invalid email or password {"stack":"Error: Invalid email or password\n    at AuthService.login (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\services\\authService.js:60:13)\n    at login (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\controllers\\authController.js:35:22)","statusCode":401,"path":"/api/auth/login","method":"POST"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: User logged in: trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      Login failed: User not found for email client@example.com
+
+      at AuthService.log [as login] (src/services/authService.js:59:15)
+
+    console.log
+      2025-12-19 18:08:20 [[31merror[39m]: Invalid email or password {"stack":"Error: Invalid email or password\n    at AuthService.login (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\services\\authService.js:60:13)\n    at login (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\controllers\\authController.js:35:22)","statusCode":401,"path":"/api/auth/login","method":"POST"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      Login failed: User not found for email trainer@example.com
+
+      at AuthService.log [as login] (src/services/authService.js:59:15)
+
+    console.log
+      2025-12-19 18:08:20 [[31merror[39m]: Invalid email or password {"stack":"Error: Invalid email or password\n    at AuthService.login (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\services\\authService.js:60:13)\n    at login (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\controllers\\authController.js:35:22)","statusCode":401,"path":"/api/auth/login","method":"POST"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: User logged in: trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: User logged in: client@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[31merror[39m]: Workout name must be at least 3 characters long {"stack":"Error: Workout name must be at least 3 characters long\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\middleware\\validate.js:21:19\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\middleware\\roleMiddleware.js:24:7)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\middleware\\authMiddleware.js:30:5)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:807:7\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:691:5","statusCode":400,"path":"/api/workouts","method":"POST"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:20 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: User logged in: trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: User logged in: client@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: User logged in: trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: User logged in: client@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: User logged in: trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: User logged in: client@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[31merror[39m]: Access denied. Required role: TRAINER {"stack":"Error: Access denied. Required role: TRAINER\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\middleware\\roleMiddleware.js:19:15\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\middleware\\authMiddleware.js:30:5)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:807:7\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:691:5","statusCode":403,"path":"/api/workouts","method":"GET"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:21 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: User logged in: trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: User logged in: client@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: Workout 4e7217f3-28ef-44af-937c-d8fa712914be assigned to client 5b74553c-6405-42e2-80c2-36150387b5ca by trainer trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: User logged in: trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: User logged in: client@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: Workout 380e77a6-7de7-4c07-9c02-f4b5c1ea105e assigned to client 27e47dfb-2dee-4d59-aa6c-6f98ebc8643c by trainer trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[31merror[39m]: Workout already assigned to this client {"stack":"Error: Workout already assigned to this client\n    at WorkoutService.assignWorkout (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\services\\workoutService.js:119:13)\n    at assignWorkout (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\controllers\\workoutController.js:64:26)","statusCode":409,"path":"/api/workouts/380e77a6-7de7-4c07-9c02-f4b5c1ea105e/assign","method":"POST"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: User logged in: trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: User logged in: client@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[31merror[39m]: Workout not found {"stack":"Error: Workout not found\n    at WorkoutService.assignWorkout (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\services\\workoutService.js:88:13)\n    at assignWorkout (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\controllers\\workoutController.js:64:26)","statusCode":404,"path":"/api/workouts/00000000-0000-0000-0000-000000000000/assign","method":"POST"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: User logged in: trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:22 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: User logged in: client@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: User logged in: trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: User logged in: client@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[31merror[39m]: Access denied. Required role: CLIENT {"stack":"Error: Access denied. Required role: CLIENT\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\middleware\\roleMiddleware.js:19:15\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\middleware\\authMiddleware.js:30:5)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:807:7\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:691:5","statusCode":403,"path":"/api/workouts/my-workouts","method":"GET"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: User logged in: trainer@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: User logged in: client@example.com
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[31merror[39m]: No token provided {"stack":"Error: No token provided\n    at authenticate (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\src\\middleware\\authMiddleware.js:15:13)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:175:3)\n    at router (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:47:12)\n    at Layer.handle [as handle_request] (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at trim_prefix (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:328:13)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:286:9\n    at Function.process_params (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:807:7\n    at processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at C:\\Users\\Administrator\\workoutAssign\\workoutAssignment\\node_modules\\express-rate-limit\\dist\\index.cjs:691:5","statusCode":401,"path":"/api/workouts/my-workouts","method":"GET"}
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+    console.log
+      2025-12-19 18:08:23 [[32minfo[39m]: [object Object]
+
+      at Console.log (node_modules/winston/lib/winston/transports/console.js:87:23)
+
+  ● Workout Integration Tests › POST /api/workouts › should allow trainer to create workout
+
+    Trainer Login Failed: 401 {"success":false,"error":"Invalid email or password"}
+
+    [0m [90m 44 |[39m     
+     [90m 45 |[39m     [36mif[39m ([33m![39mtrainerLogin[33m.[39mbody[33m.[39mdata) {
+    [31m[1m>[22m[39m[90m 46 |[39m       [36mthrow[39m [36mnew[39m [33mError[39m([32m`Trainer Login Failed: ${trainerLogin.status} ${JSON.stringify(trainerLogin.body)}`[39m)[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 47 |[39m     }
+     [90m 48 |[39m
+     [90m 49 |[39m     trainerToken [33m=[39m trainerLogin[33m.[39mbody[33m.[39mdata[33m.[39mtoken[33m;[39m[0m
+
+      at Object.<anonymous> (tests/integration/workout.test.js:46:13)
+
+  ● Workout Integration Tests › POST /api/workouts › should return 403 when client tries to create workout
+
+    TypeError: Cannot read properties of undefined (reading 'token')
+
+    [0m [90m 52 |[39m       [33m.[39mpost([32m'/api/auth/login'[39m)
+     [90m 53 |[39m       [33m.[39msend({ email[33m:[39m [32m'client@example.com'[39m[33m,[39m password[33m:[39m [32m'password123'[39m })[33m;[39m
+    [31m[1m>[22m[39m[90m 54 |[39m     clientToken [33m=[39m clientLogin[33m.[39mbody[33m.[39mdata[33m.[39mtoken[33m;[39m
+     [90m    |[39m                                         [31m[1m^[22m[39m
+     [90m 55 |[39m   })[33m;[39m
+     [90m 56 |[39m
+     [90m 57 |[39m   afterAll([36masync[39m () [33m=>[39m {[0m
+
+      at Object.token (tests/integration/workout.test.js:54:41)
+
+  ● Workout Integration Tests › POST /api/workouts › should return 401 without authentication
+
+    Trainer Login Failed: 401 {"success":false,"error":"Invalid email or password"}
+
+    [0m [90m 44 |[39m     
+     [90m 45 |[39m     [36mif[39m ([33m![39mtrainerLogin[33m.[39mbody[33m.[39mdata) {
+    [31m[1m>[22m[39m[90m 46 |[39m       [36mthrow[39m [36mnew[39m [33mError[39m([32m`Trainer Login Failed: ${trainerLogin.status} ${JSON.stringify(trainerLogin.body)}`[39m)[33m;[39m
+     [90m    |[39m             [31m[1m^[22m[39m
+     [90m 47 |[39m     }
+     [90m 48 |[39m
+     [90m 49 |[39m     trainerToken [33m=[39m trainerLogin[33m.[39mbody[33m.[39mdata[33m.[39mtoken[33m;[39m[0m
+
+      at Object.<anonymous> (tests/integration/workout.test.js:46:13)
+
+-----------------------|---------|----------|---------|---------|-------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------|---------|----------|---------|---------|-------------------
+All files              |   87.05 |    65.67 |   75.67 |   87.05 |                   
+ src                   |   71.42 |      100 |       0 |   71.42 |                   
+  app.js               |   71.42 |      100 |       0 |   71.42 | 45,58,70-73,78-81 
+ src/config            |   93.75 |    66.66 |      50 |   93.75 |                   
+  database.js          |   83.33 |       50 |       0 |   83.33 | 18                
+  logger.js            |     100 |       75 |     100 |     100 | 25                
+ src/controllers       |   79.54 |      100 |   83.33 |   79.54 |                   
+  authController.js    |     100 |      100 |     100 |     100 |                   
+  workoutController.js |   68.96 |      100 |      75 |   68.96 | 10-24,50,100      
+ src/middleware        |   93.44 |    70.37 |     100 |   93.44 |                   
+  authMiddleware.js    |     100 |      100 |     100 |     100 |                   
+  errorHandler.js      |   81.25 |       50 |     100 |   81.25 | 23,28,33          
+  requestLogger.js     |     100 |      100 |     100 |     100 |                   
+  roleMiddleware.js    |   91.66 |    66.66 |     100 |   91.66 | 15                
+  validate.js          |     100 |      100 |     100 |     100 |                   
+ src/routes            |     100 |      100 |     100 |     100 |                   
+  authRoutes.js        |     100 |      100 |     100 |     100 |                   
+  workoutRoutes.js     |     100 |      100 |     100 |     100 |                   
+ src/services          |   84.74 |    65.38 |    87.5 |   84.74 |                   
+  authService.js       |   87.09 |    63.63 |     100 |   87.09 | 24,108-111        
+  workoutService.js    |   82.14 |    66.66 |      75 |   82.14 | 10-27,92,101,105  
+ src/utils             |     100 |    33.33 |     100 |     100 |                   
+  errors.js            |     100 |    33.33 |     100 |     100 | 6-31              
+ src/validators        |     100 |      100 |     100 |     100 |                   
+  authValidator.js     |     100 |      100 |     100 |     100 |                   
+  workoutValidator.js  |     100 |      100 |     100 |     100 |                   
+-----------------------|---------|----------|---------|---------|-------------------
+Jest: "global" coverage threshold for branches (70%) not met: 65.67%
+Test Suites: 1 failed, 1 passed, 2 total
+Tests:       3 failed, 19 passed, 22 total
+Snapshots:   0 total
+Time:        5.617 s
+Ran all test suites.

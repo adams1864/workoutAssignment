@@ -1,3 +1,5 @@
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env.test') });
 const request = require('supertest');
 const app = require('../../src/app');
 const prisma = require('../../src/config/database');
@@ -191,6 +193,58 @@ describe('Workout Integration Tests', () => {
         .send({ clientId });
 
       expect(response.status).toBe(404);
+    });
+
+    it('should return 403 when trainer tries to assign another trainer\'s workout', async () => {
+      // Create another trainer and their workout
+      const otherTrainer = await prisma.user.create({
+        data: {
+          email: 'other@example.com',
+          password: 'hash',
+          role: 'TRAINER'
+        }
+      });
+      const otherWorkout = await prisma.workout.create({
+        data: {
+          name: 'Other Workout',
+          description: 'Desc',
+          trainerId: otherTrainer.id
+        }
+      });
+
+      const response = await request(app)
+        .post(`/api/workouts/${otherWorkout.id}/assign`)
+        .set('Authorization', `Bearer ${trainerToken}`)
+        .send({ clientId });
+
+      expect(response.status).toBe(403);
+    });
+
+    it('should return 404 when assigning to non-existent client', async () => {
+      const response = await request(app)
+        .post(`/api/workouts/${workoutId}/assign`)
+        .set('Authorization', `Bearer ${trainerToken}`)
+        .send({ clientId: '00000000-0000-0000-0000-000000000000' });
+
+      expect(response.status).toBe(404);
+    });
+
+    it('should return 403 when assigning to a non-client user', async () => {
+      // Create another trainer to try to assign to
+      const otherTrainer = await prisma.user.create({
+        data: {
+          email: 'other2@example.com',
+          password: 'hash',
+          role: 'TRAINER'
+        }
+      });
+
+      const response = await request(app)
+        .post(`/api/workouts/${workoutId}/assign`)
+        .set('Authorization', `Bearer ${trainerToken}`)
+        .send({ clientId: otherTrainer.id });
+
+      expect(response.status).toBe(403);
     });
   });
 
