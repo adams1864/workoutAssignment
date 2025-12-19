@@ -1,0 +1,74 @@
+// This is your Prisma schema file
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  password  String
+  role      Role     @default(CLIENT)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  trainedWorkouts      Workout[]            @relation("TrainerWorkouts")
+  assignedWorkouts     WorkoutAssignment[]  @relation("ClientAssignments")
+
+  @@index([email])
+  @@index([role])
+  @@map("users")
+}
+
+model Workout {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  trainerId   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  trainer     User                 @relation("TrainerWorkouts", fields: [trainerId], references: [id], onDelete: Cascade)
+  assignments WorkoutAssignment[]
+
+  @@index([trainerId])
+  @@index([name])
+  @@map("workouts")
+}
+
+model WorkoutAssignment {
+  id           String           @id @default(uuid())
+  workoutId    String
+  clientId     String
+  assignedDate DateTime         @default(now())
+  status       AssignmentStatus @default(PENDING)
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  // Relations
+  workout      Workout @relation(fields: [workoutId], references: [id], onDelete: Cascade)
+  client       User    @relation("ClientAssignments", fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@unique([workoutId, clientId])
+  @@index([clientId])
+  @@index([status])
+  @@map("workout_assignments")
+}
+
+enum Role {
+  TRAINER
+  CLIENT
+}
+
+enum AssignmentStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+}

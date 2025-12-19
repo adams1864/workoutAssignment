@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: workout_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: workout_user
+      POSTGRES_PASSWORD: workout_pass
+      POSTGRES_DB: workout_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U workout_user -d workout_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - workout-network
+
+  # Node.js Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: workout_api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: "postgresql://workout_user:workout_pass@postgres:5432/workout_db?schema=public"
+      JWT_SECRET: "your-super-secret-jwt-key-change-in-production"
+      JWT_EXPIRES_IN: "30m"
+      PORT: 3000
+      NODE_ENV: "production"
+      RATE_LIMIT_WINDOW_MS: 900000
+      RATE_LIMIT_MAX_REQUESTS: 100
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - workout-network
+    volumes:
+      - ./logs:/app/logs
+
+networks:
+  workout-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
